@@ -1,0 +1,58 @@
+package FibonacciSeries;
+
+import java.io.*;
+import java.util.*;
+
+/**
+ * 
+ * @author Hosam Abdeltawab
+ * @date: December 25, 2016
+ * @category: Fibonacci Series Implementation
+ *
+ */
+
+public class Fibo {
+
+	public static void main(String[] args) throws IOException {
+		
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in)); // A buffered reader to read user input.
+		LinkedList list = new LinkedList();//Creaying a new LinkedList
+
+		int value = Integer.parseInt(reader.readLine());//Parsin the user input to an integer to know to limit of nmbers.
+
+		/*
+		 * Initializing variables
+		 */
+		int first = 1; //To hold first number
+		int second = 1;//To hold second number
+		int temp = 0;//To hold a temporary number
+		int previousNumber = 0;//To hold the previous number in the sequence
+
+		/*
+		 * Addint the first three numbers in the sequence.
+		 */
+		list.add(temp);
+		list.add(second);
+		list.add(second);
+
+		/*
+		 *A while loop to add the rest of the numbers with the value as a top boundary. 
+		 */
+		while (list.size() != value) {
+			previousNumber = second;
+			second = second + first;
+			first = previousNumber;
+
+			list.add(second);
+
+		}
+		
+		/*
+		 *Print out the sequence 
+		 */
+		System.out.println("You want to print the first " + value + " numbers.");
+		System.out.println("The first " + value + " numbers in the Fibonacci series are: " + list.toString());
+
+	}
+
+}

@@ -48,7 +48,7 @@ public class Fibo {
 		}
 		
 		/*
-		 *Print out the sequence 
+		 *Printing out the sequence 
 		 */
 		System.out.println("You want to print the first " + value + " numbers.");
 		System.out.println("The first " + value + " numbers in the Fibonacci series are: " + list.toString());
